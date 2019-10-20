@@ -75,8 +75,8 @@ class Historical extends Component {
                 </div>
                 <div className="columns is-flex is-multiline">
                     {Object.keys(toDisplay).map((i) => (
-                        <div className="column is-1" key={`${toDisplay[i]['symbol']}${toDisplay[i]['price']}`}>
-                            <Ticker key={`${toDisplay[i]['symbol']}${toDisplay[i]['price']}`}
+                        <div className="column is-1" key={`${i}${toDisplay[i]['symbol']}${toDisplay[i]['price']}`}>
+                            <Ticker key={`${i}${toDisplay[i]['symbol']}${toDisplay[i]['price']}`}
                                     ticker={toDisplay[i]['symbol']} price={toDisplay[i]['price']}
                                     threshold={this.props.threshold} />
                         </div>
