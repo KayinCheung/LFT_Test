@@ -6,6 +6,7 @@ A React + Redux front end that displays the websocket stream of symbol/price upd
 First run the python server: https://github.com/KayinCheung/LFT_Test_Backend
 Ensure the python server is running at `http://127.0.0.1:5000`
 
+In the repository
 - `npm install`
 - `npm start`
 
