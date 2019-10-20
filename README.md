@@ -24,6 +24,7 @@ Ensure the python server is running at `http://127.0.0.1:5000`
 
 ### Historical data page
 
+- Accessible from the top right "View Historical Data" button
 - Gets past 5 mins of data from server
 - Allows user to page through the data, 120 elements per page.
 - Informs user the available time range of historical data, time range of current page data, current/total pages
