@@ -75,8 +75,10 @@ class RealTime extends Component {
         <div className="columns is-flex is-multiline">
 
           {Object.keys(prices).map((i) => (
-            <div className="column is-1" key={`column${i}`}>
-              <Ticker key={i} ticker={prices[i][0]} price={prices[i][1]} threshold={this.props.threshold} />
+            <div className="column is-1" key={`${prices[i][0]}${prices[i][1]}`}>
+              <Ticker key={`${prices[i][0]}${prices[i][1]}`} 
+                      ticker={prices[i][0]} price={prices[i][1]}
+                      threshold={this.props.threshold} />
             </div>
           ))}
         </div>
