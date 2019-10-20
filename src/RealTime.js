@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 
 import { connect } from 'react-redux'
-import { getPrice } from './actions/GetPrice'
 import { getUpdateFreq } from './actions/getUpdateFreq'
 import { setUpdateFreq } from './actions/setUpdateFreq'
 import { setThreshold } from './actions/setThreshold'
@@ -11,25 +10,10 @@ import ThresholdInput from './ThresholdInput'
 
 
 class RealTime extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      threshold: 1000
-    }
-    this.getPrice = this.getPrice.bind(this);
-  }
 
   componentDidMount() {
-    this.props.getPrice()
     this.props.getUpdateFreq()
-
-    //setInterval(this.getPrice, this.props.updateFreq);
   }
-
-  getPrice() {
-    this.props.getPrice()
-  }
-
 
   render() {
     let prices = this.props.allData
@@ -69,7 +53,6 @@ class RealTime extends Component {
         <div>
         </div>
 
-
         Showing last {prices.length} elements
 
         <div className="columns is-flex is-multiline">
@@ -82,8 +65,6 @@ class RealTime extends Component {
             </div>
           ))}
         </div>
-
-
       </div>
     );
   }
@@ -101,4 +82,4 @@ const mapStateToProps = state => ({
   threshold: state.threshold.threshold
 })
 
-export default connect(mapStateToProps, { getPrice, getUpdateFreq, setUpdateFreq, setThreshold })(RealTime);
+export default connect(mapStateToProps, { getUpdateFreq, setUpdateFreq, setThreshold })(RealTime);
